@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var start = [1, 2, 3, 1, 2, 2, 1, 3, 3, 2, 3, 1];
+        //创建一个空对象
+        function AryA(startAry) {
+            var obj = {};
+            for (var i = 0; i < startAry.length; i++) {
+                // 循环数组中的每一项，把每一项向对象中进行存储  =》 item:item
+                var item = startAry[i];
+                if (obj[item] !== undefined) {
+                    // 说明当前项不存在
+                    //startAry.splice(i, 1); 还是导致数组塌陷，如果数组中元素多的话，性能不好
+                    startAry[i] = startAry[startAry.length - 1];
+                    startAry.length--;
+                    i--;
+                    continue;
+                }
+                obj[item] = item;
+            }
+            return startAry;
+        }
+        var aa = AryA(start);
+        console.log(aa);
+    </script>
+</body>
+
+</html>

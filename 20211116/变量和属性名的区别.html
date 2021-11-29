@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let name = 10;
+        let obj = {
+            name: "张三",
+            null: 12,
+            undefined: 34,
+            122: 110,
+            10: 111220
+        };//一个对象的属性名只有两种格式：数字或者字符串（等基本数据类型）
+        console.log(obj.name);
+        console.log(obj['122']);
+        console.log(obj[122]);
+        console.log(obj.null);
+        console.log(obj[undefined]);
+        console.log(obj['name']);
+        console.log(obj[name]);//=>obj[10]=>111220
+        //obj[name变量代表的值] =》obj[10] =>111220
+    </script>
+</body>
+
+</html>

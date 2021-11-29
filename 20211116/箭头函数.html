@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sum(n, m) {
+            return n + m;
+        }
+        //改写成箭头函数
+        var sum = (n, m) => {
+            return n + m;
+        }
+        //如果只有return输出的话 
+        var sum = (n, m) => n + m;
+        console.log(sum(10, 30));
+
+
+        // =====================================================
+
+        function fn(n) {
+            return function (m) {
+                return n + m;
+            }
+        }
+
+
+        //改写成 箭头函数为
+        var fn = n => m => n + m;
+        // ===========================
+
+
+        /*   var fnc = () =>{
+         *       console.log(arguments);
+         *   }
+         *   fnc(1,2,3,4);
+         */
+        // Uncaught ReferenceError: arguments is not defined 箭头函数没有   arguments 内置函数。
+        // ================
+        var fnc = (...arg) => {
+            console.log(arg);
+        }
+        fnc(1, 2, 3, 4);
+        //可是使用 ...arg 来代替 arguments 并且会转换为数组而不是类数组（伪数组）
+    </script>
+</body>
+
+</html>

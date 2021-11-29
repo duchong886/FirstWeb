@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = {
+            x:1
+        }
+        let b = a;
+        // b.n = 12;
+        // b.x = 23;
+        a.x = a = {
+            n:2
+        }
+        console.log(a.x);
+        console.log(b);
+        console.log(a);
+        console.log(b.x.n);
+        console.log(b.n);
+         
+    </script>
+</body>
+</html>

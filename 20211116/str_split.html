@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = "test";
+        let aa = str.split("");//转换为数组
+        console.log(aa);
+        let bb = aa.join("");//转换为字符串
+        console.log(bb);
+        console.log(str);// t,e,s,t
+        console.log(typeof str);
+
+
+        var strBack = "wojiushi";
+        function ucFirst(str) {
+            if (!str) return str;
+
+            return str[0].toUpperCase() + str.slice(1);
+        }
+
+        console.log(ucFirst(strBack));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 返回当前的日期和时间
+        var data = new Date();
+        console.log(data);
+        // 返回1970/1/1 00:00:00 到现在的毫秒数（时间戳）
+        var data1 = new Date();
+
+        console.log(data1.getTime());// 方法1
+
+        var data3 = new Date();
+        console.log(+data3); // 方法2
+        
+        var data4 = Date.now();
+        console.log(data4);// 方法3
+        // 自动设置时间（字面量方式）
+        var data2 = new Date('2021-11-26 11:26:26');
+        console.log(data2);
+        
+        
+        //===========================================================
+        console.log("================================================");
+        var myDate = new Date();
+        myDate.setFullYear(2010, 0, 14);
+        myDate.setDate(myDate.getDate()+5);// 我们将日期设置为5天后的日期
+        myDate.setMonth(myDate.getMonth()+4);// 将月份设置为4个月后的月份
+        console.log(myDate);
+
+        // 注意： 如果增加天份和月份会改变月份和年份，那么日期对象会自动完成这种转换
+    </script>
+</body>
+
+</html>

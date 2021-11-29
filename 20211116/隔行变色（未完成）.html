@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #box {
+            box-sizing: border-box;
+            padding: 20px;
+            width: 300px;
+            border: 2px solid lightblue;
+            margin: 20px auto;
+        }
+
+        ul li {
+            line-height: 50px;
+            border-bottom: 1px solid lightcoral;
+        }
+
+        ul li:nth-last-child(1) {
+            border-bottom: none;
+        }
+
+        /* ul li:hover{
+            background-color: skyblue;
+            color: #000;
+            cursor: pointer;
+        } */
+    </style>
+</head>
+
+<body>
+    <ul id="box">
+        <li>我是第1个Li</li>
+        <li>我是第2个Li</li>
+        <li>我是第3个Li</li>
+        <li>我是第4个Li</li>
+        <li>我是第5个Li</li>
+    </ul>
+    <script>
+        var newBox = document.getElementById("box");
+        var newList = newBox.getElementsByTagName("li");
+        // console.log(newList);
+        for (var i = 0; i < newList.length; i++) {
+            // if (i % 2 == 0) {
+            //     newList[i].style.backgroundColor = "skyblue";
+            // }else{
+            //     newList[i].style.backgroundColor = "gray";
+            // }
+            newList[i].style.backgroundColor = i % 2 == 0 ? "skyblue" : "gray";
+                //循环的时候给每一个li都绑定鼠标事件
+            newList[i].onmouseover = function () {
+                this.style.backgroundColor = "lightblue";
+            }
+
+            newList[i].onmouseout = function () {
+                this.style.backgroundColor = "#fff"
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>

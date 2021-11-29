@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #tabBox {
+            box-sizing: border-box;
+            margin: 20px auto;
+            width: 500px;
+        }
+
+        #navBox {
+            display: flex;
+            position: relative;
+            top: 1px;
+        }
+
+        #navBox li {
+            box-sizing: border-box;
+            margin-right: 10px;
+            padding: 0 10px;
+            line-height: 35px;
+            cursor: pointer;
+            border: 1px solid #999;
+        }
+
+        #navBox li.active {
+            border-bottom-color: #fff;
+        }
+
+        #tabBox>div {
+            display: none;
+            box-sizing: border-box;
+            padding: 10px;
+            height: 150px;
+            border: 1px solid #999;
+        }
+
+        #tabBox>div.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tabBox">
+        <ul id="navBox">
+            <li class="active">足球</li>
+            <li>网球</li>
+            <li>台球</li>
+        </ul>
+        <div class="active">足球踢断腿</div>
+        <div>网球打断胳膊</div>
+        <div>台球打断头</div>
+    </div>
+    <script>
+        var tabBox = document.getElementById("tabBox");
+        var tabList = tabBox.getElementsByTagName("div");
+        var navBox = document.getElementById("navBox");
+        var navList = navBox.getElementsByTagName("li");
+        for (var i = 0; i < navList.length; i++) {
+            navList[i].myIndex = i;//对象自定义属性
+            navList[i].onclick = function () {
+                changeTab(this.myIndex);
+            }
+        }
+        //封装一个实现选项卡的函数
+        function changeTab(clickIndex) {
+            for (var i = 0; i < navList.length; i++) {
+                //先清空所有的active样式
+                navList[i].className = "";
+                tabList[i].className = "";
+            }
+            //点击的是谁就给谁添加active类
+            navList[clickIndex].className = "active";
+            tabList[clickIndex].className = "active";
+        }
+    </script>
+</body>
+
+</html>

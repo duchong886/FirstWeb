@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var startAry = [1, 2, 3, 1, 2, 2, 1, 3, 3, 2, 3, 1];
+        for (var i = 0; i < startAry.length; i++) {
+            // item 获取每一次循环的当前项
+            // i:当前项的索引 i+1：后一项
+            var item = startAry[i];
+            // 让当前项和后面每一项进行比较
+            for (var j = i + 1; j < startAry.length; j++) {
+                // 后面拿出来要进行比较的项
+                var compare = startAry[j];
+                if (item === compare) {
+                    // j索引这一项要从数组中删除，结果引起数组塌陷
+                    // 数组塌陷： j后面的每一项索引都提前了一位，原数组改变，length改变，导致下一次要比较的应该还是
+                    //  还是j这个索引的内容。
+                    startAry.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+        console.log(startAry);
+    </script>
+</body>
+
+</html>

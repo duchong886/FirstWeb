@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="codeIpt">
+    <br />
+    <span id="codeBox"></span>
+    <button id="changeCode">换一张</button>
+
+
+    <script>
+        window.onload = function () {
+            var codeIpt = document.getElementById("codeIpt");
+            var codeBox = document.getElementById("codeBox");
+            var changeCode = document.getElementById("changeCode");
+
+
+            //
+            function queryCode() {
+                var area = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                var result = '';
+                for (var i = 0; i < 4; i++) {
+                    // 总共四个随机码，所以只需要循环四次，
+                    var ran = Math.round(Math.random() * 61);
+                    // 根据索引找到对应的字符串， 把找到的字符串拼接成四位随机码
+                    result += area.charAt(ran);
+                }
+                codeBox.innerHTML = result;
+            }
+            queryCode();
+
+            changeCode.onclick = queryCode;
+            // onblur: 鼠标失去焦点事件
+            codeIpt.onblur = function () {
+                // 获取用户和验证码内容(表单元素.value/ 非表单元素.innerHTML)
+                var val = codeIpt.value,
+                    code = codeBox.innerHTML;
+                // 不区分大小写的验证 （都转换为大写或小写）
+                if (val.toLowerCase() == code.toLowerCase()) {
+                    alert("验证码输入成功。");
+
+                } else {
+                    alert("验证码输入有误，请重试！");
+                    // 重新生成验证码
+                    codeIpt.value = '';
+                    queryCode();
+                }
+
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

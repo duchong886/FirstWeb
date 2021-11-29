@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "张三",
+            age: 123,
+            height: 234,
+            sex: "男",
+            11:123,
+            1:1233,
+            3:34,
+            23:123,
+            4534:3423
+        }
+        for (var key in obj) {
+            console.log('属性名：'+key,'属性值：'+obj[key]);
+        }
+        //for in 循环遍历会优先进行遍历数字，并且按从小到大顺序进行排列。
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sum(n, m) {
+            console.log(n, m);
+            var result = n + m;
+            result *= 10;
+            result /= 2;
+        }
+        
+        sum();//创建函数时我们设置了形参变量，但如果执行的时候没有给传递对应的实参值，那么形参变量默认的值是：undefined
+        sum(10);
+        sum(10, 20);
+        sum(10, 20, 30);
+
+    </script>
+</body>
+
+</html>
